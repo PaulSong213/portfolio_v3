@@ -8,6 +8,7 @@ module.exports = {
     extend: {
         backgroundColor: ['active'],
         backgroundOpacity: ['hover'],
+        scale: ['active'],
     },
   },
   plugins: [],

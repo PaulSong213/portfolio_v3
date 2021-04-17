@@ -10,7 +10,7 @@
                 v-for="(nav, index) in navigationLinks"
                 :key="index">
                 <div class="bg-green-400 p-1 rounded-md">
-                    <ion-icon :name="nav.icon" class="block my-auto text-2xl
+                    <ion-icon  :name="nav.icon" class="block my-auto text-2xl
                         text-gray-100 group-hover:shadow-sm">
                     </ion-icon>
                 </div>

@@ -1,0 +1,73 @@
+{
+    "projects":[
+     {
+        "id":1,
+        "title":"Clinic System",
+        "url":"http://clinic-songalia.epizy.com/?i=1",
+        "file":"https://github.com/PaulSong213/clinic_system",
+        "imageThumbnail":"clinic-thumbnail.jpg",
+        "heartCount": 0
+     },
+     {
+        "id":2,
+        "title":"Online Store",
+        "url":"",
+        "file":"https://github.com/PaulSong213/e-commerce-php",
+        "imageThumbnail":"store-thumbnail.jpg",
+        "heartCount": 0
+     },
+     {
+        "id":3,
+        "title":"Library System",
+        "url":"",
+        "file":"https://github.com/PaulSong213/Java-Swing-Library-System",
+        "imageThumbnail":"library-thumbnail.jpg",
+        "heartCount": 0
+     }
+    ],
+    "skills":[
+        {
+         "id":1,
+         "title":"HTML",
+         "description":"Website Structure",
+         "logo":"logo-html5.svg",
+         "skillSet":[]
+        },
+        {
+         "id":2,
+         "title":"CSS",
+         "description":"Website Design",
+         "logo":"logo-css3.svg",
+         "skillSet":[]
+        },
+        {
+         "id":3,
+         "title":"Javascript",
+         "description":"Website Functionality",
+         "logo":"logo-javascript.svg",
+         "skillSet":[
+            {
+            "id":1,
+            "title":"Vue3",
+            "description":"Javascript Framework",
+            "logo":"logo-vue.svg"
+           }
+         ]
+        },
+        {
+         "id":4,
+         "title":"Photoshop",
+         "description":"Photo Manipulation",
+         "logo":"logo-figma.svg",
+         "skillSet":[
+            {
+            "id":4,
+            "title":"Figma",
+            "description":"Website design and prototyping",
+            "logo":"logo-figma.svg"     
+            }
+         ]
+        }
+    ]
+}    
+

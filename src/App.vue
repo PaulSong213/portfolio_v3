@@ -1,14 +1,13 @@
 <template>
   <MainNav />  
-    <div class="px-16 bg-gray-100">
+    <div class="md:px-4 xl:px-16 bg-gray-100 mb-20">
         <div class="grid grid-cols-12 pt-8 px-2 bg-white max-w-screen-2xl mx-auto
              rounded-md mt-2">
-            <SideNav class="col-span-2 "/>
-            <Home class="col-span-10"/>
-            
+            <SideNav class="col-span-2 hidden xl:block"/>
+            <Home class="col-span-12 xl:col-span-10" />
         </div>
     </div>
-  
+    
 </template>
 
 <script>
