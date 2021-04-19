@@ -1,12 +1,80 @@
-{
-    "projects":[
+{   "projects":[
      {
         "id":1,
         "title":"Clinic System",
         "url":"http://clinic-songalia.epizy.com/?i=1",
         "file":"https://github.com/PaulSong213/clinic_system",
         "imageThumbnail":"clinic-thumbnail.jpg",
-        "heartCount": 0
+        "heartCount": 10,
+        "images":[
+            {"id":1, "fileName":"46Clinic System0.png"},
+            {"id":2, "fileName":"46Clinic System1.png"},
+            {"id":3, "fileName":"46Clinic System2.png"},
+            {"id":4, "fileName":"46Clinic System3.png"},
+            {"id":5, "fileName":"46Clinic System4.png"},
+            {"id":6, "fileName":"46Clinic System5.png"},
+            {"id":7, "fileName":"46Clinic System6.png"},
+            {"id":8, "fileName":"46Clinic System7.png"},
+            {"id":9, "fileName":"46Clinic System8.png"}
+        ],
+        "tools":[
+            {
+             "id":1,
+             "title":"HTML",
+             "descriptionLink":"https://en.wikipedia.org/wiki/HTML",
+             "logo":"logo-html5.svg",
+             "skillSet":[]
+            },
+            {
+             "id":2,
+             "title":"CSS",
+             "descriptionLink":"https://en.wikipedia.org/wiki/CSS",
+             "logo":"logo-css3.svg",
+             "skillSet":[
+                   {
+                    "id":2,
+                    "title":"Tailwindcss2",
+                    "descriptionLink":"https://tailwindcss.com/",
+                    "logo":"tailwind.png"
+                   }
+                ]
+            },
+            {
+             "id":3,
+             "title":"Javascript",
+             "descriptionLink":"https://en.wikipedia.org/wiki/JavaScript",
+             "logo":"logo-javascript.svg",
+             "skillSet":[
+                    {
+                    "id":1,
+                    "title":"JQuery",
+                    "descriptionLink":"https://jquery.com/",
+                    "logo":"jquery.png"
+                    }
+                ]
+            },
+            {
+             "id":4,
+             "title":"PHP",
+             "descriptionLink":"https://www.php.net/",
+             "logo":"php.png",
+             "skillSet":[
+                    {
+                    "id":1,
+                    "title":"Cakephp4",
+                    "descriptionLink":"https://cakephp.org/",
+                    "logo":"cakephp.png"
+                    }
+                ]
+            },
+            {
+             "id":6,
+             "title":"MySQL",
+             "descriptionLink":"https://www.mysql.com/",
+             "logo":"mysql.png",
+             "skillSet":[]
+            }
+        ]
      },
      {
         "id":2,
@@ -14,7 +82,70 @@
         "url":"",
         "file":"https://github.com/PaulSong213/e-commerce-php",
         "imageThumbnail":"store-thumbnail.jpg",
-        "heartCount": 0
+        "heartCount": 0,
+        "images":[
+            {"id":1, "fileName":"49E-commerce0.png"},
+            {"id":2, "fileName":"49E-commerce1.png"},
+            {"id":3, "fileName":"49E-commerce2.png"},
+            {"id":4, "fileName":"49E-commerce3.png"},
+            {"id":5, "fileName":"49E-commerce4.png"},
+            {"id":6, "fileName":"49E-commerce5.png"},
+            {"id":7, "fileName":"49E-commerce6.png"},
+            {"id":8, "fileName":"49E-commerce7.png"},
+            {"id":9, "fileName":"49E-commerce8.png"},
+            {"id":10, "fileName":"49E-commerce9.png"}
+        ],
+        "tools":[
+            {
+             "id":1,
+             "title":"HTML",
+             "descriptionLink":"https://en.wikipedia.org/wiki/HTML",
+             "logo":"logo-html5.svg",
+             "skillSet":[]
+            },
+            {
+             "id":2,
+             "title":"CSS",
+             "descriptionLink":"https://en.wikipedia.org/wiki/CSS",
+             "logo":"logo-css3.svg",
+             "skillSet":[
+                   {
+                    "id":1,
+                    "title":"Bootstrap4",
+                    "descriptionLink":"https://getbootstrap.com/",
+                    "logo":"bootstrap.png"
+                   }
+                ]
+            },
+            {
+             "id":3,
+             "title":"Javascript",
+             "descriptionLink":"https://en.wikipedia.org/wiki/JavaScript",
+             "logo":"logo-javascript.svg",
+             "skillSet":[
+                    {
+                    "id":1,
+                    "title":"JQuery",
+                    "descriptionLink":"https://jquery.com/",
+                    "logo":"jquery.png"
+                    }
+                ]
+            },
+            {
+             "id":4,
+             "title":"PHP",
+             "descriptionLink":"https://www.php.net/",
+             "logo":"php.png",
+             "skillSet":[ ]
+            },
+            {
+             "id":6,
+             "title":"MySQL",
+             "descriptionLink":"https://www.mysql.com/",
+             "logo":"mysql.png",
+             "skillSet":[]
+            }
+        ]
      },
      {
         "id":3,
@@ -22,51 +153,140 @@
         "url":"",
         "file":"https://github.com/PaulSong213/Java-Swing-Library-System",
         "imageThumbnail":"library-thumbnail.jpg",
-        "heartCount": 0
+        "heartCount": 0,
+        "images":[
+            {"id":1, "fileName":"51Library System0.png"},
+            {"id":2, "fileName":"51Library System1.png"},
+            {"id":3, "fileName":"51Library System2.png"},
+            {"id":4, "fileName":"51Library System3.png"},
+            {"id":5, "fileName":"51Library System4.png"},
+            {"id":6, "fileName":"51Library System5.png"},
+            {"id":7, "fileName":"51Library System6.png"},
+            {"id":8, "fileName":"51Library System7.png"},
+            {"id":9, "fileName":"51Library System8.png"}
+        ],
+        "tools":[
+            {
+             "id":5,
+             "title":"Java",
+             "descriptionLink":"https://www.java.com/en/",
+             "logo":"java.png",
+             "skillSet":[]
+            },
+            {
+             "id":6,
+             "title":"MySQL",
+             "descriptionLink":"https://www.mysql.com/",
+             "logo":"mysql.png",
+             "skillSet":[]
+            }
+        ]
      }
     ],
     "skills":[
         {
          "id":1,
          "title":"HTML",
-         "description":"Website Structure",
+         "descriptionLink":"https://en.wikipedia.org/wiki/HTML",
          "logo":"logo-html5.svg",
          "skillSet":[]
         },
         {
          "id":2,
          "title":"CSS",
-         "description":"Website Design",
+         "descriptionLink":"https://en.wikipedia.org/wiki/CSS",
          "logo":"logo-css3.svg",
-         "skillSet":[]
+         "skillSet":[
+               {
+                "id":1,
+                "title":"Bootstrap4",
+                "descriptionLink":"https://getbootstrap.com/",
+                "logo":"bootstrap.png"
+               },
+               {
+                "id":2,
+                "title":"Tailwindcss2",
+                "descriptionLink":"https://tailwindcss.com/",
+                "logo":"tailwind.png"
+               }
+            ]
         },
         {
          "id":3,
          "title":"Javascript",
-         "description":"Website Functionality",
+         "descriptionLink":"https://en.wikipedia.org/wiki/JavaScript",
          "logo":"logo-javascript.svg",
          "skillSet":[
-            {
-            "id":1,
-            "title":"Vue3",
-            "description":"Javascript Framework",
-            "logo":"logo-vue.svg"
-           }
-         ]
+                {
+                "id":1,
+                "title":"JQuery",
+                "descriptionLink":"https://jquery.com/",
+                "logo":"jquery.png"
+                },
+                {
+                "id":2,
+                "title":"Vue3",
+                "descriptionLink":"https://v3.vuejs.org/",
+                "logo":"logo-vue.svg"
+                }
+            ]
         },
         {
          "id":4,
+         "title":"PHP",
+         "descriptionLink":"https://www.php.net/",
+         "logo":"php.png",
+         "skillSet":[
+                {
+                "id":1,
+                "title":"Cakephp4",
+                "descriptionLink":"https://cakephp.org/",
+                "logo":"cakephp.png"
+                }
+            ]
+        },
+        {
+         "id":5,
+         "title":"Java",
+         "descriptionLink":"https://www.java.com/en/",
+         "logo":"java.png",
+         "skillSet":[]
+        },
+        {
+         "id":6,
+         "title":"MySQL",
+         "descriptionLink":"https://www.mysql.com/",
+         "logo":"mysql.png",
+         "skillSet":[]
+        },
+        {
+         "id":7,
          "title":"Photoshop",
-         "description":"Photo Manipulation",
-         "logo":"logo-figma.svg",
+         "descriptionLink":"https://www.adobe.com/sea/products/photoshop.html",
+         "logo":"photoshop.png",
          "skillSet":[
             {
             "id":4,
             "title":"Figma",
-            "description":"Website design and prototyping",
+            "descriptionLink":"https://www.figma.com/",
             "logo":"logo-figma.svg"     
             }
          ]
+        }
+        
+    ],
+    "contacts":[
+        {
+         "id":1,
+         "title": "Github",
+         "link": "https://github.com/PaulSong213",
+         "logo": "logo-github"   
+        },
+        {
+         "id":2,
+         "title": "Email",
+         "link": "mailto: songaliajohnpaul@gmail.com",
+         "logo": "mail-outline"   
         }
     ]
 }    

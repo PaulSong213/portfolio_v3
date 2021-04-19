@@ -1,8 +1,14 @@
 @tailwind base;
+html{
+   scroll-behavior: smooth;
+}
 
 @tailwind components;
 
 @tailwind utilities;
 .bg-projects{
     background-color: #75FFFF;
+}
+.bg-footer{
+    background-color: #10142D;
 }

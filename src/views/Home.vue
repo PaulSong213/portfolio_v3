@@ -1,8 +1,9 @@
 <template>
-    <section class="px-4">
-        <div class="mb-8" v-if="projectThumbnails">
+    <section class="px-1 md:px-4">
+        <div class="mb-8" v-if="projectThumbnails"
+             id="projects">
             <SectionTitle :title="'PROJECTS'" />
-            <div class="grid  md:grid-cols-2  gap-2 xl:gap-8 w-full">
+            <div class="grid  md:grid-cols-2  gap-2 xl:gap-8 w-full auto-rows-max">
                 <Project
                 v-for="project in projectThumbnails"
                 :key="project.id"
@@ -12,12 +13,20 @@
                 :file="project.file"
                 :image-thumbnail="project.imageThumbnail"
                 :heart-counts="project.heartCount"
+                :images="project.images"
+                :tools="project.tools"
                 />
             </div>
         </div>
-        <div>
-            <SectionTitle :title="'SKILLS'" />
-            <SkillTab :skills="skills" />
+        <div class="bg-white p-1 rounded-md mb-8 border border-gray-100
+             shadow-lg"
+            id="skills">
+            <SectionTitle :title="'SKILLS'" class="mt-4 mb-8" />
+            <SkillTab :skills="portfolioData.skills"/>
+        </div>
+        <div
+            id="about-me">
+            <Footer :contacts="portfolioData.contacts" />
         </div>
     </section>
 </template>
@@ -26,19 +35,20 @@
     import Project from '@/components/Project.vue';
     import SectionTitle from '@/components/SectionTitle.vue';
     import SkillTab from '@/components/SkillTab.vue';
+    import Footer from '@/views/Footer.vue';
     import PortfolioData from '@/assets/portfolioData.json';
     export default {
         data() {
             return {
                 portfolioData: Array(),
                 projectThumbnails: Array(),
-                skills:Array()
             }
         },
         components: {
             Project,
             SkillTab,
-            SectionTitle
+            SectionTitle,
+            Footer
         },
         mounted(){
           this.getInternalJSONData();  
@@ -50,9 +60,7 @@
         },
         watch:{
             portfolioData(newData){
-                console.log(newData);
                 this.projectThumbnails = newData.projects;
-                this.skills = newData.skills;
             }
         }
     };

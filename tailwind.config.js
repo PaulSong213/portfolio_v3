@@ -9,6 +9,7 @@ module.exports = {
         backgroundColor: ['active'],
         backgroundOpacity: ['hover'],
         scale: ['active'],
+        opacity: ['active'],
     },
   },
   plugins: [],
