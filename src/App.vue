@@ -1,12 +1,16 @@
 <template>
   <MainNav />  
-    <div class="md:px-4 xl:px-16 bg-gray-100 mb-20">
+    <div class="md:px-4 xl:px-16 bg-gray-100">
         <div class="grid grid-cols-12 pt-8 px-2 bg-white max-w-screen-2xl mx-auto
-             rounded-md mt-2">
-            <SideNav class="col-span-2 absolute xl:static xl:block z-50 h-full
-                 max-w-xs top-0" 
-                style="left: -100%"/>
-            <Home class="col-span-12 xl:col-span-10 z-40 " />
+             rounded-md mt-2 relative">
+            <transition name="pop">
+            <SideNav v-if="isSideNavVisible" 
+                class="col-span-2 absolute xl:static xl:block z-50 h-full
+                  max-w-md top-0 w-screen-70 left-0" 
+                />
+            </transition>
+            <Home class="col-span-12 xl:col-span-10 z-40 " 
+                  v-on:click="manualToggleSideNav(false)"/>
         </div>
     </div>
     
@@ -19,7 +23,8 @@ import SideNav from './views/SideNav.vue';
 export default {
     data() {
         return {
-          isSideNavVisible: false  
+          isSideNavVisible : false,
+          prevScreenSize: 0
       }
     },      
     name: 'App',
@@ -29,18 +34,56 @@ export default {
       SideNav
     },
     mounted(){
-        this.checkInitialSideNavState();  
+        this.checkInitialSideNavState();
+        window.addEventListener("resize",this.autoToggleSideNav);
+    },
+    unmounted(){
+        window.removeEventListener("resize",this.autoToggleSideNav);
     },
     methods:{
         checkInitialSideNavState(){
-            var screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-            var isInLargeScreen = screenWidth > 1279;
-            if(isInLargeScreen){
+            if(window.innerWidth > 1279){
                this.isSideNavVisible = true; 
             }
+        },
+        autoToggleSideNav(){
+            const isAtSmallerScreen = window.innerWidth <= 1279;
+            const isFromLargeScreen = window.innerWidth < this.prevScreenSize;
+            if(isAtSmallerScreen && isFromLargeScreen){
+                this.isSideNavVisible = false;
+            }else if(!isAtSmallerScreen && !isFromLargeScreen){
+                this.isSideNavVisible = true;
+            }
+            this.prevScreenSize = window.innerWidth;
+        },
+        manualToggleSideNav(willOpenNav = false){
+            const isAtSmallerScreen = window.innerWidth <= 1279;
+            if(isAtSmallerScreen)this.isSideNavVisible = willOpenNav;
         }
+        
+    },
+    computed:{
+        
     }
 }
 </script>
+<style scoped>
+    @media only screen and (max-width: 1279px) {
+        .w-screen-70{
+            width: 70vw;
+        }
+    }
+    .pop-enter-active,
+    .pop-leave-active {
+      transition: all 500ms ease-in-out;
+    }
 
+    .pop-enter-from,
+    .pop-leave-to {
+        transform: scale(0);   
+        left: -100%;
+        opacity: 0;
+    }
+    
+</style>
 

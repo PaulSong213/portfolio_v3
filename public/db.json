@@ -181,85 +181,6 @@
              "skillSet":[]
             }
         ]
-     },
-     {
-        "id":4,
-        "title":"Youtube Lite",
-        "url":"",
-        "file":"https://github.com/PaulSong213/jprs.ytclone.github.io",
-        "imageThumbnail":"yt-thumbnail.jpg",
-        "heartCount": 0,
-        "images":[
-            {"id":1, "fileName":"yt0.png"},
-            {"id":2, "fileName":"yt1.png"},
-            {"id":3, "fileName":"yt2.png"}
-        ],
-        "tools":[
-            {
-             "id":1,
-             "title":"HTML",
-             "descriptionLink":"https://en.wikipedia.org/wiki/HTML",
-             "logo":"logo-html5.svg",
-             "skillSet":[]
-            },
-            {
-             "id":2,
-             "title":"CSS",
-             "descriptionLink":"https://en.wikipedia.org/wiki/CSS",
-             "logo":"logo-css3.svg",
-             "skillSet":[]
-                
-            },
-            {
-             "id":3,
-             "title":"Javascript",
-             "descriptionLink":"https://en.wikipedia.org/wiki/JavaScript",
-             "logo":"logo-javascript.svg",
-             "skillSet":[
-                    {
-                    "id":2,
-                    "title":"Vue3",
-                    "descriptionLink":"https://v3.vuejs.org/",
-                    "logo":"logo-vue.svg"
-                    }
-                ]
-            },
-            {
-             "id":4,
-             "title":"PHP",
-             "descriptionLink":"https://www.php.net/",
-             "logo":"php.png",
-             "skillSet":[
-                    {
-                    "id":1,
-                    "title":"Cakephp4",
-                    "descriptionLink":"https://cakephp.org/",
-                    "logo":"cakephp.png"
-                    }
-                ]
-            },
-            {
-            "id": 8,
-            "title":"Google API",
-             "descriptionLink":"https://cloud.google.com/",
-             "logo":"google.png",
-             "skillSet":[
-                    {
-                    "id":1,
-                    "title":"Google Auth",
-                    "descriptionLink":"https://developers.google.com/identity/protocols/oauth2",
-                    "logo":"g-auth.png"
-                    },
-                    {
-                    "id":2,
-                    "title":"YT Data API",
-                    "descriptionLink":"https://developers.google.com/youtube/v3",
-                    "logo":"g-yt.png"
-                    }
-                ]
-            }        
-                
-        ]
      }
     ],
     "skills":[
@@ -351,26 +272,6 @@
             "logo":"logo-figma.svg"     
             }
          ]
-        },
-        {
-        "id": 8,
-        "title":"Google API",
-         "descriptionLink":"https://cloud.google.com/",
-         "logo":"google.png",
-         "skillSet":[
-                {
-                "id":1,
-                "title":"Google Auth",
-                "descriptionLink":"https://developers.google.com/identity/protocols/oauth2",
-                "logo":"g-auth.png"
-                },
-                {
-                "id":2,
-                "title":"YT Data API",
-                "descriptionLink":"https://developers.google.com/youtube/v3",
-                "logo":"g-yt.png"
-                }
-            ]
         }
         
     ],

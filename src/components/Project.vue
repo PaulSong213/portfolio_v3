@@ -45,7 +45,7 @@
                             </ion-icon>
                         </a>
                         <!--Heart Count-->
-                        <div class="flex justify-center flex-col-reverse">
+                        <div class="flex justify-center flex-col-reverse hidden">
                             
                             <h1 v-if="!isUserHearted"
                                 v-on:click="hearthProject(true)"
@@ -122,8 +122,8 @@
 <script>
     import 'vue3-carousel/dist/carousel.css';
     import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
-    //import axios from 'axios';
-    import $ from 'jquery'
+    import axios from 'axios';
+    //import $ from 'jquery'
     export default {
         name: 'Project',
         components: {
@@ -158,15 +158,10 @@
                 this.isMoreInfoOpened = newInfoState;
             },
             testHeart(){
-                /*axios.get('http://localhost:8765/project-hearts/heart-count')
-                .then(function (response) {
-                  // handle success
-                  console.log(response);
-                }) */
-               $.get('http://localhost:8765/project-hearts/count',function(data){
-                  console.log(data); 
-               });
-        
+                const params = new URLSearchParams();
+                params.append('param1', 'value1');
+                params.append('param2', 'value2');
+                axios.post('/db.json', params);
             }
         },
         computed: {
