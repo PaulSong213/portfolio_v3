@@ -13,7 +13,8 @@
         <div class="px-10 row-start-3 md:row-start-auto pt-10 md:pt-0 cols-span-1 md:col-span-2 pt-5">
             <div class="max-w-xl mx-auto">
                 <p class="text-justify text-sm md:text-base">Hope you liked my works,
-                if you have suggestions or feedback let me know.
+                if you have suggestions or feedback <a href="mailto: songaliajohnpaul@gmail.com"
+                            class="text-green-300 font-bold">let me know</a>.
                 By the way you can call me 'Paul', a computer science
                 student from CvSU - Bacoor. I enjoy learning technologies related 
                 to programming especially web development both Backend and Frontend.
