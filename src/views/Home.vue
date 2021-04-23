@@ -3,7 +3,8 @@
         <div class="mb-8" v-if="projectThumbnails"
              id="projects">
             <SectionTitle :title="'PROJECTS'" />
-            <div class="grid  md:grid-cols-2  gap-2 xl:gap-8 w-full auto-rows-max">
+            <div class="grid  md:grid-cols-2  gap-2 xl:gap-8 w-full auto-rows-max
+                 overflow-hidden px-4">
                 <Project
                 v-for="project in projectThumbnails"
                 :key="project.id"
