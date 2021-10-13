@@ -55,7 +55,7 @@
             return {
                 navigationLinks: [
                     {title: "Email Me" , icon: "mail",link:"mailto: songaliajohnpaul@gmail.com" },
-                    {title: "Latest Project" , icon: "globe-outline",link:"http://clinic-songalia.epizy.com/?i=1" },
+                    {title: "Latest Project" , icon: "globe-outline",link:"https://www.talkchats.live/#/sign-in" },
                     {title: "Download my CV" , icon: "document",link:"https://docs.google.com/document/d/1KreQyvnczKuA4ZlbIhrWDn8g4DGMnRXEzIuz67pHtnU/edit?usp=sharing" },
                     {title: "Fork this Website" , icon: "logo-github",link:"https://github.com/PaulSong213/portfolio_v3/tree/master" },
                 ],
