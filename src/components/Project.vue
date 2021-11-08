@@ -27,48 +27,59 @@
             </div>
             <div class="h-full z-20 flex flex-col justify-center col-span-1">
                 <div class="h-4/6 block my-auto">
-                    <div class="h-full  flex flex-col space-y-4 justify-end">
+                    <div class="h-full  flex flex-col space-y-2 justify-end">
                         <!--Website URL-->
-                        <a v-if="url"
-                           :href="url" target="_blank">
-                            <ion-icon v-pre name="globe-outline" 
-                                class="table mx-auto text-2xl cursor-pointer 
-                                transform hover:scale-110 select-none">
-                            </ion-icon>
+                        <a @mouseenter="toggleActionTooltip(1)" @mouseleave="toggleActionTooltip()" v-if="url" :href="url" target="_blank" class="table mx-auto text-2xl cursor-pointer transform hover:scale-110 select-none relative">
+
+                            <transition name="fade-left">
+                                <div v-if="actionToolTip === 1" class="bg-projects rounded-md shadow-lg p-1 absolute right-7 w-40 -top-1  transition-all">
+                                    <h6 class="text-xs text-center font-black">Visit Live Demo</h6>
+                                </div>
+                            </transition>
+                            <ion-icon v-pre name="globe-outline"></ion-icon>
                         </a>
+
                         <!--Website File-->
-                        <a v-if="file"
-                            :href="file" target="_blank">
-                            <ion-icon v-pre name="folder-outline" 
-                                class="table mx-auto text-2xl cursor-pointer
-                                transform hover:scale-110 select-none">
-                            </ion-icon>
+                        <a  @mouseenter="toggleActionTooltip(2)" @mouseleave="toggleActionTooltip()" v-if="file" :href="file" target="_blank" class="table mx-auto text-2xl cursor-pointer transform hover:scale-110 select-none">
+                            <transition name="fade-left">
+                                <div v-if="actionToolTip === 2" class="bg-projects rounded-md shadow-lg p-1 absolute right-7 w-40 -top-1  transition-all">
+                                    <h6 class="text-xs text-center font-black">View Source Code</h6>
+                                </div>
+                            </transition>
+                            <ion-icon v-pre name="folder-outline"></ion-icon>
                         </a>
+
+                        <!-- Buy Project -->
+                        <a  @mouseenter="toggleActionTooltip(3)" @mouseleave="toggleActionTooltip()" v-if="buyProject" :href="buyProject" target="_blank" class="table mx-auto text-2xl cursor-pointer transform hover:scale-110 select-none">
+                            <transition name="fade-left">
+                                <div v-if="actionToolTip === 3" class="bg-projects rounded-md shadow-lg p-1 absolute right-7 w-40 -top-1  transition-all">
+                                    <h6 class="text-xs text-center font-black">Buy Project</h6>
+                                </div>
+                            </transition>
+                            <ion-icon v-pre name="cart-outline"></ion-icon>
+                        </a>
+
                         <!--Heart Count-->
-                        <div class="flex justify-center flex-col-reverse hidden">
+                        <div class="flex justify-center flex-col-reverse" @mouseenter="toggleActionTooltip(4)" @mouseleave="toggleActionTooltip()">
                             
                             <h1 v-if="!isUserHearted"
                                 v-on:click="hearthProject(true)"
                                 class="text-sm md:text-base table mx-auto">
                                 <span v-if="heartCounts > 0">{{heartCounts}}</span>
                             </h1>
-                            <h1 v-else
-                                v-on:click="hearthProject(false)"
-                                class="text-sm md:text-base table mx-auto">
+                            <h1 v-else v-on:click="hearthProject(false)" class="text-sm md:text-base table mx-auto">
                                 <span>{{heartCountIfHearted}}</span>
                             </h1>
-                            <div v-on:click="hearthProject(true)"
-                                 v-if="!isUserHearted">
-                                <ion-icon v-pre name="heart-outline" 
-                                    class="table mx-auto text-lg md:text-2xl cursor-pointer
-                                    transform hover:scale-110 select-none">
-                                </ion-icon>
+                            <div v-on:click="hearthProject(true)" v-if="!isUserHearted" class="table mx-auto text-lg md:text-2xl cursor-pointer transform hover:scale-110 select-none hover:text-red-500">
+                                <transition name="fade-left">
+                                    <div v-if="actionToolTip === 4" class="bg-projects rounded-md shadow-lg p-1 absolute right-7 w-40 -top-1  transition-all">
+                                        <h6 class="text-xs text-black text-center font-black">Like Project</h6>
+                                    </div>
+                                </transition> 
+                                <ion-icon v-pre name="heart-outline"> </ion-icon>
                             </div>
-                            <div v-on:click="hearthProject(false)"  v-else>
-                                <ion-icon  v-pre name="heart" 
-                                    class="table mx-auto text-lg md:text-2xl text-red-500
-                                    cursor-pointer transform hover:scale-110 select-none">
-                                </ion-icon>
+                            <div v-on:click="hearthProject(false)"  v-else class="table mx-auto text-lg md:text-2xl text-red-500 cursor-pointer transform hover:scale-110 select-none">
+                                <ion-icon  v-pre name="heart"></ion-icon>
                             </div>
                         </div>
                     </div>
@@ -80,12 +91,8 @@
             border-gray-200">
             <div class="flex justify-between mb-5">
                 <h1 class="table my-auto text-base font-bold">{{title}}</h1>
-                <h3 class="bg-green-600 rounded-md cursor-pointer w-max rounded-full
-                text-white font-black select-none hover:bg-green-700
-                transform active:scale-110 px-2 flex justify-center bg-opacity-60"
-                v-on:click="toggleMoreInfo(false)">
-                    <ion-icon name="arrow-back-outline"
-                              class="table my-auto"></ion-icon>
+                <h3 class="bg-green-600 cursor-pointer w-max rounded-full text-white font-black select-none hover:bg-green-700 transform active:scale-110 px-2 flex justify-center bg-opacity-60" v-on:click="toggleMoreInfo(false)">
+                    <ion-icon name="arrow-back-outline" class="table my-auto"></ion-icon>
                 </h3>
             </div>
             <carousel :items-to-show="1.1"  :wrap-around="true">
@@ -134,6 +141,7 @@
         },
         data() {
             return {
+                actionToolTip : 0,
                 isUserHearted: false,
                 isMoreInfoOpened: false
             }
@@ -144,12 +152,16 @@
             title:String,
             url: String,
             file:String,
+            buyProject : String,
             imageThumbnail:String,
             heartCounts: {Number, default: 0},
             images: Array,
             tools: Array
         },
         methods: {
+            toggleActionTooltip(tooltipCount = 0){
+                this.actionToolTip = tooltipCount;
+            },
             hearthProject(willHeart = true){
                 this.isUserHearted = willHeart;
                 this.testHeart();

@@ -18,8 +18,8 @@
 
 <script>
 import Home from './views/Home.vue';
-import MainNav from './views/MainNav.vue';
-import SideNav from './views/SideNav.vue';
+import MainNav from './components/MainNav.vue';
+import SideNav from './components/SideNav.vue';
 export default {
     data() {
         return {

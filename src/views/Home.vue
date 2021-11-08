@@ -16,6 +16,7 @@
                 :heart-counts="project.heartCount"
                 :images="project.images"
                 :tools="project.tools"
+                :buy-project="project.buyProject"
                 />
             </div>
         </div>
@@ -36,7 +37,7 @@
     import Project from '@/components/Project.vue';
     import SectionTitle from '@/components/SectionTitle.vue';
     import SkillTab from '@/components/SkillTab.vue';
-    import Footer from '@/views/Footer.vue';
+    import Footer from '@/components/Footer.vue';
     import PortfolioData from '@/assets/portfolioData.json';
     export default {
         data() {
