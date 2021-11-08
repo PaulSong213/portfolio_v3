@@ -8,24 +8,24 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "core-js": "^3.6.5",
-    "jquery": "^3.6.0",
-    "vue": "^3.0.0",
-    "vue3-carousel": "^0.1.15",
-    "vuex": "^4.0.0-alpha.1"
+    "axios": "^0.21.4",
+    "core-js": "^3.19.1",
+    "firebase": "^9.3.0",
+    "vue": "^3.2.21",
+    "vue3-carousel": "^0.1.30",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@tailwindcss/postcss7-compat": "^2.1.0",
+    "@tailwindcss/postcss7-compat": "^2.2.17",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "autoprefixer": "^9.8.6",
+    "@vue/compiler-sfc": "^3.2.21",
+    "autoprefixer": "^9.8.8",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
-    "postcss": "^7.0.35",
+    "eslint-plugin-vue": "^7.20.0",
+    "postcss": "^7.0.39",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.0",
     "vue-cli-plugin-tailwind": "~2.0.6"
   },

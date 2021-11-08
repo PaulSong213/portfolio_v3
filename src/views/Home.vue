@@ -1,10 +1,8 @@
 <template>
     <section class="px-1 md:px-4">
-        <div class="mb-8" v-if="projectThumbnails"
-             id="projects">
+        <div class="mb-8" v-if="projectThumbnails" id="projects">
             <SectionTitle :title="'PROJECTS'" />
-            <div class="grid  md:grid-cols-2  gap-2 xl:gap-8 w-full auto-rows-max
-                 overflow-hidden px-4">
+            <div class="grid  md:grid-cols-2  gap-2 xl:gap-8 w-full auto-rows-max overflow-hidden px-4">
                 <Project
                 v-for="project in projectThumbnails"
                 :key="project.id"
@@ -20,8 +18,7 @@
                 />
             </div>
         </div>
-        <div class="bg-white p-1 rounded-md mb-8 border border-gray-100
-             shadow-lg"
+        <div class="bg-white p-1 rounded-md mb-8 border border-gray-100 shadow-lg"
             id="skills">
             <SectionTitle :title="'SKILLS'" class="mt-4 mb-8" />
             <SkillTab :skills="portfolioData.skills"/>
@@ -34,6 +31,7 @@
 </template>
 
 <script>
+    import { getDatabase, ref, child, get } from "firebase/database";
     import Project from '@/components/Project.vue';
     import SectionTitle from '@/components/SectionTitle.vue';
     import SkillTab from '@/components/SkillTab.vue';
@@ -53,9 +51,22 @@
             Footer
         },
         mounted(){
-          this.getInternalJSONData();  
+            this.test(),
+            this.getInternalJSONData();  
         },
         methods: {
+            test(){
+                const dbRef = ref(getDatabase());
+                get(child(dbRef, 'projects')).then((snapshot) => {
+                if (snapshot.exists()) {
+                    console.log(snapshot.val());
+                } else {
+                    console.log("No data available");
+                }
+                }).catch((error) => {
+                console.error(error);
+                });
+            },
             getInternalJSONData(){
                this.portfolioData = PortfolioData;
             }

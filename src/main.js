@@ -1,21 +1,21 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import './assets/tailwind.css';
-import firebase from "firebase/app";
-import "firebase/analytics";
+import { initializeApp } from 'firebase/app';
 
 
 const firebaseConfig = {
-  apiKey: process.env.VUE_APP_FIREBASE_apiKey,
-  authDomain: process.env.VUE_APP_FIREBASE_authDomain,
-  projectId: process.env.VUE_APP_FIREBASE_projectId,
-  storageBucket: process.env.VUE_APP_FIREBASE_storageBucket,
-  messagingSenderId: process.env.VUE_APP_FIREBASE_messagingSenderId,
-  appId: process.env.VUE_APP_FIREBASE_appId,
-  measurementId: process.env.VUE_APP_FIREBASE_measurementId
+  apiKey: "AIzaSyBBp1hP0ALFxzkJLaqIzrs2TOxmqQczbwE",
+  authDomain: "portfolio-ebe1c.firebaseapp.com",
+  databaseURL: "https://portfolio-ebe1c-default-rtdb.firebaseio.com",
+  projectId: "portfolio-ebe1c",
+  storageBucket: "portfolio-ebe1c.appspot.com",
+  messagingSenderId: "588011148251",
+  appId: "1:588011148251:web:e5214a946d191b78934dfe",
+  measurementId: "G-2DHE0G2DE1"
 };
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+
+initializeApp(firebaseConfig);
 
 createApp(App).mount('#app');
     
