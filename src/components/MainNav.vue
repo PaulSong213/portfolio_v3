@@ -1,5 +1,5 @@
 <template>
-    <section class="shadow-lg bg-white">
+    <section class="shadow-lg bg-white px-2 md:px-5 lg:px-10">
         <div class="flex justify-between px-4 py-4 max-w-screen-2xl mx-auto">
             <div class="xl:hidden flex"
                  v-on:click="this.$root.manualToggleSideNav(!this.$root.isSideNavVisible)">
@@ -34,7 +34,7 @@
                     <h2 class=" text-blue-500 text-xs md:text-base select-
                         my-auto select-none hidden xl:table"
                     >songaliajohnpaul@gmail.com</h2>
-                    <img src="@/assets/img/profile.jpg" 
+                    <img src="https://avatars.githubusercontent.com/u/68486657?v=4" 
                          class="xl:w-10 xl:h-10 w-14 h-14  rounded-full select-none"/>
                 </a>
             </div>

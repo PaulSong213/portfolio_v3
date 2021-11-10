@@ -1,8 +1,8 @@
 <template>
-    <section class="px-1 md:px-4">
+    <section class="">
         <div class="mb-8" v-if="projectThumbnails" id="projects">
             <SectionTitle :title="'PROJECTS'" />
-            <div class="grid  md:grid-cols-2  gap-2 xl:gap-8 w-full auto-rows-max overflow-hidden px-4">
+            <div class="grid  grid-cols-1 lg:grid-cols-2  gap-8 md:gap-2 xl:gap-8 w-full auto-rows-max overflow-hidden px-1">
                 <Project
                 v-for="project in sortedHeartProjectThumbnails"
                 :key="project.id"
@@ -20,9 +20,11 @@
                 />
             </div>
         </div>
-        <div class="bg-white p-1 rounded-md mb-8 border border-gray-100 shadow-lg" id="skills">
+        <div class="px-1 rounded-md mb-8" id="skills">
             <SectionTitle :title="'SKILLS'" class="mt-4 mb-8" />
-            <SkillTab :skills="portfolioData.skills"/>
+            <div class="pl-2">
+                <SkillTab :skills="portfolioData.skills"/>
+            </div>
         </div>
         <div id="about-me">
             <Footer :contacts="portfolioData.contacts" />

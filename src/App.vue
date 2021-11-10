@@ -1,7 +1,7 @@
 <template>
   <MainNav />  
     <div class="md:px-4 xl:px-16 bg-gray-100">
-        <div class="grid grid-cols-12 pt-8 px-2 bg-white max-w-screen-2xl mx-auto
+        <div class="grid grid-cols-12 pt-8 bg-white max-w-screen-2xl mx-auto
              rounded-md mt-2 relative">
             <transition name="pop">
             <SideNav v-if="isSideNavVisible" 
