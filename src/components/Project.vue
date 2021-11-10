@@ -36,7 +36,7 @@
                                     <h6 class="text-xs text-center font-black">Visit Live Demo</h6>
                                 </div>
                             </transition>
-                            <ion-icon v-pre name="globe-outline"></ion-icon>
+                            <ion-icon name="globe-outline"></ion-icon>
                         </a>
 
                         <!--Website File-->
@@ -46,7 +46,7 @@
                                     <h6 class="text-xs text-center font-black">View Source Code</h6>
                                 </div>
                             </transition>
-                            <ion-icon v-pre name="folder-outline"></ion-icon>
+                            <ion-icon name="folder-outline"></ion-icon>
                         </a>
 
                         <!-- Buy Project -->
@@ -56,7 +56,7 @@
                                     <h6 class="text-xs text-center font-black">Buy Project</h6>
                                 </div>
                             </transition>
-                            <ion-icon v-pre name="cart-outline"></ion-icon>
+                            <ion-icon name="cart-outline"></ion-icon>
                         </a>
 
                         <!--Heart Count-->
@@ -76,10 +76,10 @@
                                         <h6 class="text-xs text-black text-center font-black">Like Project</h6>
                                     </div>
                                 </transition> 
-                                <ion-icon v-pre name="heart-outline"> </ion-icon>
+                                <ion-icon name="heart-outline"> </ion-icon>
                             </div>
                             <div v-on:click="hearthProject(false)"  v-else class="table mx-auto text-lg md:text-2xl text-red-500 cursor-pointer transform hover:scale-110 select-none">
-                                <ion-icon  v-pre name="heart"></ion-icon>
+                                <ion-icon   name="heart"></ion-icon>
                             </div>
                         </div>
                     </div>
@@ -129,8 +129,6 @@
 <script>
     import 'vue3-carousel/dist/carousel.css';
     import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
-    import axios from 'axios';
-    //import $ from 'jquery'
     export default {
         name: 'Project',
         components: {
@@ -142,10 +140,10 @@
         data() {
             return {
                 actionToolTip : 0,
-                isUserHearted: false,
                 isMoreInfoOpened: false
             }
         },
+        emits : ['toggleHeartProject'],
         props: {
             key:Number,
             id:Number,
@@ -156,25 +154,19 @@
             imageThumbnail:String,
             heartCounts: {Number, default: 0},
             images: Array,
-            tools: Array
+            tools: Array,
+            isUserHearted : Boolean,
         },
         methods: {
+            hearthProject(willHeart = true){
+                this.$emit('toggleHeartProject',willHeart,this.id);
+            },
             toggleActionTooltip(tooltipCount = 0){
                 this.actionToolTip = tooltipCount;
-            },
-            hearthProject(willHeart = true){
-                this.isUserHearted = willHeart;
-                this.testHeart();
             },
             toggleMoreInfo(newInfoState = true){
                 this.isMoreInfoOpened = newInfoState;
             },
-            testHeart(){
-                const params = new URLSearchParams();
-                params.append('param1', 'value1');
-                params.append('param2', 'value2');
-                axios.post('/db.json', params);
-            }
         },
         computed: {
             heartCountIfHearted(){
