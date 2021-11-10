@@ -1,21 +1,20 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import './assets/tailwind.css';
-import { initializeApp } from 'firebase/app';
+import { initializeApp, getApps, getApp } from 'firebase/app';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBBp1hP0ALFxzkJLaqIzrs2TOxmqQczbwE",
-  authDomain: "portfolio-ebe1c.firebaseapp.com",
-  databaseURL: "https://portfolio-ebe1c-default-rtdb.firebaseio.com",
-  projectId: "portfolio-ebe1c",
-  storageBucket: "portfolio-ebe1c.appspot.com",
-  messagingSenderId: "588011148251",
-  appId: "1:588011148251:web:e5214a946d191b78934dfe",
-  measurementId: "G-2DHE0G2DE1"
+  apiKey: "AIzaSyDkBlBSjL0J-9xJptIj36gnqpAr_wA4mS0",
+  authDomain: "portfolio-b2b99.firebaseapp.com",
+  projectId: "portfolio-b2b99",
+  storageBucket: "portfolio-b2b99.appspot.com",
+  messagingSenderId: "749070364633",
+  appId: "1:749070364633:web:4aab6730f44b336a4e73c8",
+  measurementId: "G-DDGQ6J88E7"
 };
 
-initializeApp(firebaseConfig);
+getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 
 createApp(App).mount('#app');
     

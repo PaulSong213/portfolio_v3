@@ -6,7 +6,7 @@
         "file":"",
         "buyProject":"https://www.fiverr.com/share/Ad1vra",
         "imageThumbnail":"chat-thumbnail.jpg",
-        "heartCount": 10,
+        "heartCount": 0,
         "images":[
             {"id":1, "fileName":"Chat System1.png"},
             {"id":2, "fileName":"Chat System2.png"},
@@ -80,7 +80,7 @@
         "url":"http://clinic-songalia.epizy.com/?i=1",
         "file":"https://github.com/PaulSong213/clinic_system",
         "imageThumbnail":"clinic-thumbnail.jpg",
-        "heartCount": 10,
+        "heartCount": 0,
         "images":[
             {"id":1, "fileName":"46Clinic System0.png"},
             {"id":2, "fileName":"46Clinic System1.png"},
