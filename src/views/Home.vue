@@ -2,7 +2,7 @@
     <section class="space-y-20">
         <div v-if="projectThumbnails" id="projects">
             <SectionTitle :title="'PROJECTS'" />
-            <div class="grid  grid-cols-1 lg:grid-cols-2  gap-8 md:gap-2 xl:gap-8 w-full auto-rows-max overflow-hidden px-1">
+            <div class="grid  grid-cols-1 lg:grid-cols-2  gap-8 md:gap-2 xl:gap-8 w-full auto-rows-max overflow-hidden">
                 <Project
                 v-for="project in sortedHeartProjectThumbnails"
                 :key="project.id"
