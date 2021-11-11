@@ -88,7 +88,7 @@
                 <slide v-for="image in images"
                  :key="image.id"
                  >
-                  <div class="rounded-md shadow-xl overflow-hidden relative max-w-full w-full bg-blue-500 bg-gradient-to-b from-green-300 via-blue-400 to-green-300 h-50 sm:h-56">
+                  <div class="rounded-md shadow-xl overflow-hidden relative max-w-full w-full bg-blue-500 bg-gradient-to-b from-green-300 via-blue-400 to-green-300 h-52 sm:h-56">
                       <img :src="require( '@/assets/img/projects/' + image.fileName )"
                        class="select-none min-h-full min-w-full"/>
                   </div>
@@ -131,7 +131,7 @@
         data() {
             return {
                 actionToolTip : 0,
-                isMoreInfoOpened: true
+                isMoreInfoOpened: false
             }
         },
         emits : ['toggleHeartProject'],

@@ -1,6 +1,6 @@
 <template>
-    <section class="">
-        <div class="mb-8" v-if="projectThumbnails" id="projects">
+    <section class="space-y-20">
+        <div v-if="projectThumbnails" id="projects">
             <SectionTitle :title="'PROJECTS'" />
             <div class="grid  grid-cols-1 lg:grid-cols-2  gap-8 md:gap-2 xl:gap-8 w-full auto-rows-max overflow-hidden px-1">
                 <Project
@@ -21,14 +21,24 @@
             </div>
         </div>
         <div class="px-1 rounded-md mb-8" id="skills">
-            <SectionTitle :title="'SKILLS'" class="mt-4 mb-8" />
+            <SectionTitle title="SKILLS" />
             <div class="pl-2">
                 <SkillTab :skills="portfolioData.skills"/>
             </div>
         </div>
-        <div id="about-me">
-            <Footer :contacts="portfolioData.contacts" />
+       
+        <div id="contact-links">
+            <SectionTitle title="CONTACT LINKS" />
+            <ContactLinks :contacts="portfolioData.contacts" />
         </div>
+         <div id="certificates">
+            <SectionTitle title="CERTIFICATES" />
+            <Certificates :certificates="portfolioData.certificates" />
+        </div>
+        <div id="about-me" class="my-5">
+            <About :device-id="deviceId" />
+        </div>
+
     </section>
 </template>
 
@@ -38,7 +48,10 @@ import { getDatabase, ref, child, get,set } from "firebase/database";
 import Project from '@/components/Project.vue';
 import SectionTitle from '@/components/SectionTitle.vue';
 import SkillTab from '@/components/SkillTab.vue';
-import Footer from '@/components/Footer.vue';
+import About from '@/components/About.vue';
+import Certificates from '@/components/Certificates.vue';
+import ContactLinks from '@/components/ContactLinks.vue';
+
 import PortfolioData from '@/assets/portfolioData.json';
 export default {
     data() {
@@ -53,10 +66,11 @@ export default {
         Project,
         SkillTab,
         SectionTitle,
-        Footer
+        About,
+        ContactLinks,
+        Certificates
     },
     mounted(){
-        this.test(),
         this.registerIfNewUser(),
         this.getInternalJSONData();  
     },
