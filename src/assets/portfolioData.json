@@ -456,11 +456,35 @@
          "link": "https://github.com/PaulSong213",
          "logo": "logo-github"   
         },
+        
         {
          "id":2,
          "title": "Email",
          "link": "mailto: songaliajohnpaul@gmail.com",
-         "logo": "mail-outline"   
+         "logo": "mail"   
+        },
+        {
+            "id":3,
+            "title": "Linkedin",
+            "link": "https://www.linkedin.com/in/john-paul-songalia-102560204/",
+            "logo": "logo-linkedin"   
+        }
+    ],
+    "certificates" : [
+        {
+            "title" : "Web Porfolio Contest",
+            "images" : [
+                "web-1.png",
+                "web-2.png"
+            ],
+            "description" : "Winning a school event for web portfolio contests."
+        },
+        {
+            "title" : "E-commerce Seminar of Google",
+            "images" : [
+                "e-com.jpg"
+            ],
+            "description" : "A seminar headed by google for selling products."
         }
     ]
 }    

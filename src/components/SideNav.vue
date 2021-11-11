@@ -1,11 +1,8 @@
 <template>
-    <section class="h-screen xl:h-full w-full p-2 bg-white bg-opacity-90 
-             rounded-md overflow-auto
-             shadow-2xl border border-gray-300 xl:border-opacity-0 xl:overflow-visible">
-        <h1 class="text-xl  my-4 select-none">Quick Navigation</h1>
+    <section class="h-screen xl:h-full w-full p-2 xl:p-0  bg-opacity-90 rounded-md overflow-auto border border-gray-300 xl:border-opacity-0 xl:overflow-visible bg-white xl:bg-transparent shadow-xl xl:shadow-none">
+        <h1 class="text-lg  my-4 select-none font-bold text-gray-500">Quick Navigation</h1>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1  gap-5 p-2"
-             >
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1  gap-5 p-2">
             
             <div class="bg-green-100 w-60 max-w-full mx-auto rounded-md px-2 py-4 
                 cursor-pointer transform-gpu hover:scale-105
@@ -56,8 +53,8 @@
                 navigationLinks: [
                     {title: "Email Me" , icon: "mail",link:"mailto: songaliajohnpaul@gmail.com" },
                     {title: "Latest Project" , icon: "globe-outline",link:"https://www.talkchats.live/#/sign-in" },
-                    {title: "Download my CV" , icon: "document",link:"https://docs.google.com/document/d/1KreQyvnczKuA4ZlbIhrWDn8g4DGMnRXEzIuz67pHtnU/edit?usp=sharing" },
-                    {title: "Fork this Website" , icon: "logo-github",link:"https://github.com/PaulSong213/portfolio_v3/tree/master" },
+                    {title: "View my CV" , icon: "document",link:"https://docs.google.com/document/d/1KreQyvnczKuA4ZlbIhrWDn8g4DGMnRXEzIuz67pHtnU/edit?usp=sharing" },
+                    {title: "Clone this website" , icon: "logo-github",link:"https://github.com/PaulSong213/portfolio_v3/tree/master" },
                 ],
                 bigNavigationLinks: [
                     {title: "PROJECTS" , colorCode:"bg-blue-300", imageThumbnail:'project.jpg',link:"/#projects" },

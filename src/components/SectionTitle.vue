@@ -1,6 +1,5 @@
 <template>
-    <h1 class="text-xl font-bold text-gray-500 tracking-wider mb-4 md:mb-8
-        select-none">
+    <h1 class="text-4xl text-black tracking-wider mb-12 select-none font-bold pl-2">
         {{title}}</h1>
 </template>
 

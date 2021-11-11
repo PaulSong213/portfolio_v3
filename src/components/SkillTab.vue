@@ -12,7 +12,7 @@
                     active:scale-100">
 
                    <img class="w-8 h-8 opacity-90 select-none" :src=" require('@/assets/img/skills/' + skill.logo )" />
-                   <h1 class="text-base md:text-lg font-bold table my-auto select-none text-green-900">
+                   <h1 class="text-xs font-bold table my-auto select-none text-green-900">
                        {{skill.title}}</h1>
                 </div>
    
@@ -28,7 +28,7 @@
                     w-48 p-2 flex space-x-4 rounded-md cursor-pointer transform hover:scale-105
                     active:scale-100 ml-14 md:ml-0">
                    <img class="w-8 h-8 opacity-90 select-none" :src=" require('@/assets/img/skills/' + set.logo )" />
-                   <h1 class="text-lg font-bold table my-auto select-none text-green-900">
+                   <h1 class="text-xs font-bold table my-auto select-none text-green-900">
                        {{set.title}}</h1>
                 </div>
             </a>    

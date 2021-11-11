@@ -1,29 +1,19 @@
 <template>
-    <section>
-        <div class="grid grid-cols-12 relative p-2 w-full max-w-lg mx-auto gap-1
-             group  transition-all my-auto"
-             v-if="!isMoreInfoOpened"
-             >
-            <div class="w-full h-4/6 bg-projects absolute top-1/2  transform
-                 -translate-y-1/2 z-10 rounded-xl group-hover:shadow-xl
-                  transition-all"
-                 >
+    <section class="max-w-full">
+        <div class="grid grid-cols-12 relative p-2 w-full max-w-lg mx-auto gap-1 group  transition-all my-auto" v-if="!isMoreInfoOpened">
+            <div class="w-full h-4/6 bg-projects absolute top-1/2  transform -translate-y-1/2 z-10 rounded-xl group-hover:shadow-xl transition-all">
             </div>
-            <div class="h-full z-20 flex flex-col justify-center col-span-3
-                 md:col-span-4"
-                 >
-                <div class="h-4/6 flex flex-col justify-center cursor-pointer"
-                     v-on:click="toggleMoreInfo()">
-                    <h1 class="text-lg sm:text-2xl  font-black tracking-wider 
-                        text-gray-800 transition-all
-                        select-none group-hover:underline">
-                        {{title}}</h1>
+            <div class="h-full z-20 flex flex-col justify-center col-span-3 md:col-span-4">
+                <div class="h-4/6 flex flex-col justify-center cursor-pointer" v-on:click="toggleMoreInfo()">
+                    <h1 class="text-lg sm:text-2xl  font-bold tracking-wider text-gray-800 transition-all select-none group-hover:underline">
+                        {{title}}
+                    </h1>
                 </div>
             </div>
-            <div class="z-20 col-span-8 md:col-span-7 cursor-pointer"
-                 v-on:click="toggleMoreInfo()">
-                <img :src="require('@/assets/img/projects/' + imageThumbnail)" 
-                     class="rounded-xl select-none w-full"/>
+            <div class="z-20 col-span-8 md:col-span-7 cursor-pointer" v-on:click="toggleMoreInfo()">
+               <div class="w-full h-80 sm:h-96 rounded-xl overflow-hidden bg-blue-500 bg-gradient-to-b from-green-300 via-blue-400 to-green-300">
+                    <img :src="require('@/assets/img/projects/' + imageThumbnail)" class="select-none min-h-full min-w-full"/>
+               </div>
             </div>
             <div class="h-full z-20 flex flex-col justify-center col-span-1">
                 <div class="h-4/6 block my-auto">
@@ -32,7 +22,7 @@
                         <a @mouseenter="toggleActionTooltip(1)" @mouseleave="toggleActionTooltip()" v-if="url" :href="url" target="_blank" class="table mx-auto text-2xl cursor-pointer transform hover:scale-110 select-none relative">
 
                             <transition name="fade-left">
-                                <div v-if="actionToolTip === 1" class="bg-projects rounded-md shadow-lg p-1 absolute right-7 w-40 -top-1  transition-all">
+                                <div v-if="actionToolTip === 1" class="bg-projects rounded-md shadow-lg p-1 absolute right-7 w-40 -top-1  transition-all hidden md:block">
                                     <h6 class="text-xs text-center font-black">Visit Live Demo</h6>
                                 </div>
                             </transition>
@@ -42,7 +32,7 @@
                         <!--Website File-->
                         <a  @mouseenter="toggleActionTooltip(2)" @mouseleave="toggleActionTooltip()" v-if="file" :href="file" target="_blank" class="table mx-auto text-2xl cursor-pointer transform hover:scale-110 select-none">
                             <transition name="fade-left">
-                                <div v-if="actionToolTip === 2" class="bg-projects rounded-md shadow-lg p-1 absolute right-7 w-40 -top-1  transition-all">
+                                <div v-if="actionToolTip === 2" class="bg-projects rounded-md shadow-lg p-1 absolute right-7 w-40 -top-1  transition-all hidden md:block">
                                     <h6 class="text-xs text-center font-black">View Source Code</h6>
                                 </div>
                             </transition>
@@ -52,7 +42,7 @@
                         <!-- Buy Project -->
                         <a  @mouseenter="toggleActionTooltip(3)" @mouseleave="toggleActionTooltip()" v-if="buyProject" :href="buyProject" target="_blank" class="table mx-auto text-2xl cursor-pointer transform hover:scale-110 select-none">
                             <transition name="fade-left">
-                                <div v-if="actionToolTip === 3" class="bg-projects rounded-md shadow-lg p-1 absolute right-7 w-40 -top-1  transition-all">
+                                <div v-if="actionToolTip === 3" class="bg-projects rounded-md shadow-lg p-1 absolute right-7 w-40 -top-1  transition-all hidden md:block">
                                     <h6 class="text-xs text-center font-black">Buy Project</h6>
                                 </div>
                             </transition>
@@ -72,7 +62,7 @@
                             </h1>
                             <div v-on:click="hearthProject(true)" v-if="!isUserHearted" class="table mx-auto text-lg md:text-2xl cursor-pointer transform hover:scale-110 select-none hover:text-red-500">
                                 <transition name="fade-left">
-                                    <div v-if="actionToolTip === 4" class="bg-projects rounded-md shadow-lg p-1 absolute right-7 w-40 -top-1  transition-all">
+                                    <div v-if="actionToolTip === 4" class="bg-projects rounded-md shadow-lg p-1 absolute right-7 w-40 -top-1  transition-all hidden md:block">
                                         <h6 class="text-xs text-black text-center font-black">Like Project</h6>
                                     </div>
                                 </transition> 
@@ -86,21 +76,22 @@
                 </div>
             </div>
         </div>
-        <div v-else
-            class="bg-white rounded-md shadow-xl  p-1 md:py-2  md:px-4 border 
-            border-gray-200">
+        <div v-else class="bg-white rounded-md shadow-xl  py-1 px-2 md:py-2  md:px-4 border 
+            border-gray-200 sm:max-w-md md:max-w-lg mx-auto">
             <div class="flex justify-between mb-5">
-                <h1 class="table my-auto text-base font-bold">{{title}}</h1>
-                <h3 class="bg-green-600 cursor-pointer w-max rounded-full text-white font-black select-none hover:bg-green-700 transform active:scale-110 px-2 flex justify-center bg-opacity-60" v-on:click="toggleMoreInfo(false)">
+                <h5 class="table my-auto text-base font-bold text-green-700">{{title}}</h5>
+                <h6 class="bg-green-600 cursor-pointer w-max rounded-full text-white font-black select-none hover:bg-green-700 transform active:scale-110 px-2 flex justify-center bg-opacity-60" v-on:click="toggleMoreInfo(false)">
                     <ion-icon name="arrow-back-outline" class="table my-auto"></ion-icon>
-                </h3>
+                </h6>
             </div>
-            <carousel :items-to-show="1.1"  :wrap-around="true">
+            <carousel :items-to-show="1.05"  :wrap-around="true">
                 <slide v-for="image in images"
                  :key="image.id"
                  >
-                  <img :src="require( '@/assets/img/projects/' + image.fileName )"
-                       class="rounded-md mx-2 shadow-xl select-none"/>
+                  <div class="rounded-md shadow-xl overflow-hidden relative max-w-full w-full bg-blue-500 bg-gradient-to-b from-green-300 via-blue-400 to-green-300 h-52 sm:h-56">
+                      <img :src="require( '@/assets/img/projects/' + image.fileName )"
+                       class="select-none min-h-full min-w-full"/>
+                  </div>
                 </slide>
 
                 <template #addons>
@@ -112,13 +103,13 @@
                 <div class="flex "
                     v-for="tool in tools" :key="tool.id">
                     <div class="w-28 p-1 md:p-2 bg-green-500">
-                        <h1 class="text-sm md:text-base table my-auto text-gray-100">
-                       {{tool.title}}</h1>
+                        <p class="text-sm md:text-base table my-auto text-gray-100">
+                       {{tool.title}}</p>
                     </div>
                     <div v-for="set in tool.skillSet" :key="set.id"
                         class="w-28 p-1 md:p-2 bg-green-200">
-                        <h1 class="text-sm md:text-base table my-auto text-gray-700">
-                       {{set.title}}</h1>
+                        <p class="text-sm md:text-base table my-auto text-gray-700">
+                       {{set.title}}</p>
                     </div>
                 </div>
             </div>
