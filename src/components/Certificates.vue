@@ -1,5 +1,5 @@
 <template>
-  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-2">
     <div v-for="(certificate, index) in certificates" :key="index" class="bg-white rounded-md shadow-xl  py-1 px-2 md:py-2  md:px-4 border border-gray-200 md:max-w-lg mx-auto w-full max-w-sm">
             <carousel :items-to-show="1.05"  :wrap-around="true">
                 <slide v-for="image in certificate.images" :key="image.id">
