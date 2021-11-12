@@ -9,7 +9,7 @@
         <div class="row-start-1 md:row-start-auto">
             <img src="@/assets/img/hero.png" class="select-none mx-auto hero-image" />
         </div>
-        <div class="px-10 row-start-3 md:row-start-auto  md:pt-0 cols-span-1 md:col-span-2 pt-5">
+        <div class="px-5 sm:px-10 row-start-3 md:row-start-auto  md:pt-0 cols-span-1 md:col-span-2 pt-5">
             <div class="max-w-xl mx-auto">
                 <!-- github readme will be injected here -->
                 <div class="text-white mt-5" v-html="readmeText"></div>
@@ -18,12 +18,12 @@
                 if you have suggestions or feedback <a href="mailto: songaliajohnpaul@gmail.com" class="text-green-300 font-bold">let me know</a>.
                 </p>    
 
-                <div class="grid grid-cols-12 gap-2">
-                   <div class="flex-col flex col-span-8">
+                <div class="grid grid-cols-12 gap-2 max-w-xs sm:max-w-full">
+                   <div class="flex-col flex col-span-12 sm:col-span-8">
                         <label class="text-xs text-purple-200 uppercase" for="feedbackInput">Feedback</label>
-                        <input v-model="feedbackMessage" class="bg-purple-100 py-3 px-2 font-medium rounded-md text-black text-xs placeholder-gray-800" type="text" id="feedbackInput" placeholder="Send feedback  anonymously" >
+                        <input v-model="feedbackMessage" class="bg-purple-100 py-3 px-2 font-medium rounded-md text-black text-xs placeholder-gray-600" type="text" id="feedbackInput" placeholder="Send feedback  anonymously" >
                    </div>
-                   <div class="col-span-4 h-full flex flex-col justify-end">
+                   <div class="col-span-12 sm:col-span-4 h-full flex flex-col justify-end">
                        <div v-on:click="sendFeedback()" v-on:mouseover="if(sendFeedbackStatus === 3)sendFeedbackStatus = 0;" class="p-3 bg-purple-900 text-purple-200 rounded-md cursor-pointer hover:bg-purple-800  active:bg-purple-900 select-none text-xs font-bold text-center uppercase">
                             <span v-if="sendFeedbackStatus === 0">Send feedback</span>
                             <span v-else-if="sendFeedbackStatus === 1" >
