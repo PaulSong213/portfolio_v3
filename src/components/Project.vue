@@ -3,14 +3,14 @@
         <div class="grid grid-cols-12 relative p-2 w-full max-w-lg mx-auto gap-1 group  transition-all my-auto" v-if="!isMoreInfoOpened">
             <div class="w-full h-4/6 bg-projects absolute top-1/2  transform -translate-y-1/2 z-10 rounded-xl group-hover:shadow-xl transition-all">
             </div>
-            <div class="h-full z-20 flex flex-col justify-center col-span-3 md:col-span-4">
+            <div class="h-full z-20 flex flex-col justify-center col-span-3 sm:col-span-4">
                 <div class="h-4/6 flex flex-col justify-center cursor-pointer" v-on:click="toggleMoreInfo()">
                     <h1 class="text-lg sm:text-2xl  font-bold tracking-wider text-gray-800 transition-all select-none group-hover:underline">
                         {{title}}
                     </h1>
                 </div>
             </div>
-            <div class="z-20 col-span-8 md:col-span-7 cursor-pointer" v-on:click="toggleMoreInfo()">
+            <div class="z-20 col-span-8 sm:col-span-7 cursor-pointer" v-on:click="toggleMoreInfo()">
                <div class="w-full h-80 sm:h-96 rounded-xl overflow-hidden bg-blue-500 bg-gradient-to-b from-green-300 via-blue-400 to-green-300">
                     <img :src="require('@/assets/img/projects/' + imageThumbnail)" class="select-none min-h-full min-w-full"/>
                </div>
