@@ -5,13 +5,13 @@ import { initializeApp, getApps, getApp } from 'firebase/app';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDkBlBSjL0J-9xJptIj36gnqpAr_wA4mS0",
-  authDomain: "portfolio-b2b99.firebaseapp.com",
-  projectId: "portfolio-b2b99",
-  storageBucket: "portfolio-b2b99.appspot.com",
-  messagingSenderId: "749070364633",
-  appId: "1:749070364633:web:4aab6730f44b336a4e73c8",
-  measurementId: "G-DDGQ6J88E7"
+  apiKey: process.env.VUE_APP_FIREBASE_apiKey,
+  authDomain: process.env.VUE_APP_FIREBASE_authDomain,
+  projectId: process.env.VUE_APP_FIREBASE_projectId,
+  storageBucket: process.env.VUE_APP_FIREBASE_storageBucket,
+  messagingSenderId: process.env.VUE_APP_FIREBASE_messagingSenderId,
+  appId: process.env.VUE_APP_FIREBASE_appId,
+  measurementId: process.env.VUE_APP_FIREBASE_measurementId
 };
 
 getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
